@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Static</title>
+</head>
+<body>
+	<script>
+		class Xyz {
+			static course(){
+				alert("I am learning an OOJS concept");
+			}
+
+			static duration(){
+			 	return "Duration is 1 month";
+			}
+
+			// non static method
+			display(){
+				// invoking static methods
+				Xyz.course();
+				document.write(Xyz.duration());
+			}
+		}
+
+		let x  = new Xyz();
+			x.display();
+
+		
+	</script>
+</body>
+</html>

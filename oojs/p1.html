@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS OOJS</title>
+</head>
+<body>
+	<script>
+		var a = 10;
+		let user = {
+			name: "Be-Practical",
+			course: "Javascript OOJS",
+			students: ["Ramesh","Vinod","Raadha","Raghu"],
+			bank: [
+					{
+						item1: "HDFC Bank",
+						item2: "Yes Bank",
+						item3: "SVC Bank" 
+					},
+					{
+						item1: "Vijya Bank",
+						item2: "Canara Bank",
+						item3: "SBI Bank" 
+					}
+				  ],
+			sayHi: function(){
+								// constructor type
+								return "Say hi to " + this.name;
+							 },
+			greet: (x) => {
+							// arrow function
+							return "Greet to " + x;
+						 }
+		};
+			document.write(a + "<br>");
+			document.write(user.name + " " + user.course + "<br>");
+			document.write(user.students.join("<br>") + "<hr/>");
+
+				alert(user.sayHi());
+				alert(user.greet("Kushal"));
+				
+			for(i=0; i< user.bank.length; i++) {
+				document.write("<p>" + user.bank[i].item1 + "</p>");
+				document.write("<p>" + user.bank[i].item2 + "</p>");
+				document.write("<p>" + user.bank[i].item3 + "</p><hr/>");
+			}
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Objects</title>
+</head>
+<body>
+	<h1>JS Objects</h1>
+	<script>
+		let person = {
+			name: "Ganesh",
+			hobbies: ["Games","Cycling","Trekking","Bike Ride"],
+			sayHi: function() {
+				alert("Hi," + this.name + "," + this.hobbies[2] );
+			},
+			display: (x) => {
+				//even though it is inside a object 
+				//it will allow to use this keyword
+				alert(x);
+			}
+		};
+		// 	person.sayHi();
+		// alert(person.name);
+			person.display("say hi to javed");
+	</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"> </div>
+    <script type="text/babel">
+
+    class Clock extends React.Component {
+        constructor(props){
+            super(props);
+            //state
+            this.state = {today: props.dateObj,
+                          num : 0 }
+            this.updateTime = this.updateTime.bind(this);
+            this.incNum = this.incNum.bind(this);
+        }
+
+        updateTime(){
+            //console.log("btn clicked");
+             
+            setInterval(()=>{
+                // this.updateTime();
+                this.setState({
+                today : new Date()
+                })
+              },1000);
+        }
+
+
+        incNum(event){
+            this.setState({
+                num : this.state.num + 10
+            })
+        }
+     
+        render() {
+            return (
+                <div>
+                    <h1> { this.state.today.toLocaleTimeString() } </h1>
+                    <h1> {this.state.num } </h1>
+                    <button onClick={this.updateTime} >Start Clock</button>
+                    <button onClick={this.incNum} >Add 10</button>
+                </div>
+            );
+        }
+
+    }
+
+            ReactDOM.render(
+            <Clock dateObj={new Date()} />,
+            document.getElementById('root')
+        );
+   
+
+    
+    </script>
+</body>
+</html>

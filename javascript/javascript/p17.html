@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person {
+
+            constructor(name,email,mobile)
+            {
+                this.name = name;
+                this.email = email;
+                this.mobile = mobile;
+                
+                document.write("Hey  i am constructor");
+            }
+        
+            calc(){
+                const  x = 12;
+                const  y = 13;
+                return x * y;
+            }
+            
+            sayHi(msg)
+            {
+                document.write(msg);
+            }
+            
+            display()
+            {
+                return "My name is " + this.name + ", Email id " + this.email + ", Mobile " + this.mobile +"<br>";
+            }
+        }
+        
+        let p1 = new Person("Manu","manu@gmail.com","9988774455");
+            
+         p1.sayHi("this is my custom message");
+         document.write( "<h2>" +  p1.display() + "</h2>");
+        
+         document.write("<h2>" + p1.calc() + "</h2>");
+    </script>
+</body>
+</html>

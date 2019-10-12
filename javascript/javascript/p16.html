@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function person(name,email,mobile)
+        {
+            this.name = name;
+            this.email = email;
+            this.mobile = mobile;
+            this.display = function(){
+                                        document.write("Name is " + this.name + ", Email id " + this.email+ ", Mobile number " + this.mobile + "<br>");
+                                     };
+        }
+        
+    // using prototype we can create a property for object person externally.
+        person.prototype.getName = function(){
+                                                document.write("<h3>My name is " + this.name + "</h3>");
+                                              };
+    // object referance of person Method
+        let p1 = new person("Mahesh","mahesh@gmail.com","12334455566");
+        let p2 = new person("Rajesh","rajesh@gmail.com","44334455566");
+        let p3 = new p2.constructor("Javed","javed@gmail.com","9988774455");
+        
+        
+    // method call with respect to object referance
+        p1.display();
+        p2.display();
+        p3.display();
+        
+        p1.getName();
+        p2.getName();
+        p3.getName();
+    </script>
+</body>
+</html>

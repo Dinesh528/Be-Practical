@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>__proto__ keyword</title>
+</head>
+<body>
+	<h1>__proto__ keyword</h1>
+	<script>
+		let obj = {};
+
+	    let key = prompt("What is the Key?", "__proto__");
+	    obj[key]= "some value";
+
+	    alert(obj[key]); // [object Object], not "some value"!
+	    console.log(obj[key]);
+	    document.write(obj[key] );
+    
+	</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Inheritance class (extends) / interface (implements)</title>
+  </head>
+  <body>
+    <script>
+      class Course {
+        constructor() {
+          this.coursename = 'Angular JS';
+        }
+      }
+
+      class Bepractical extends Course {
+        constructor(fee, duration) {
+          super();
+          this.fee = fee;
+          this.duration = duration;
+        }
+      }
+
+      let c1 = new Bepractical(12000, '2 months');
+      document.write(
+        'Course name ' +
+          c1.coursename +
+          '<br/>' +
+          'Fee ' +
+          c1.fee +
+          '<br/>' +
+          'Duration=' +
+          c1.duration
+      );
+    </script>
+  </body>
+</html>

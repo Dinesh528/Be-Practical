@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+      <div id="myApp">
+
+      </div>
+      <script type="text/babel">
+         // react class component
+          class HelloWorld extends React.Component {
+              render() {
+                return (
+                  //jsx
+                      <div>
+                          <h1>Welcome to React class Component</h1>
+                      </div>
+                );
+              }
+          }
+
+          ReactDOM.render(
+              <HelloWorld/>,
+              document.getElementById('myApp')
+          );
+      </script>
+  </body>
+</html>

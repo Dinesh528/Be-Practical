@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Object Methods</title>
+</head>
+<body>
+	<script>
+		// 3 main methods
+		// 1. Object.create()   new copty of the object
+		// 2. Object.getPrototypeOf() return properties of created object
+		// 3. Object.setPrototypeOf() set new Properties to created object 
+
+		let manoj = {
+			course: "Angular JS",
+			fee: 12222,
+			duration: "2 Months"
+		};
+
+		let ramesh = Object.create(manoj);
+
+		console.log('manoj before set ', manoj);
+		console.log( 'ramesh before set ', ramesh);
+
+		console.log(Object.getPrototypeOf(ramesh) === manoj); // true
+
+			Object.setPrototypeOf(ramesh, {}); 
+			
+		console.log(Object.getPrototypeOf(ramesh) === manoj); // false
+	</script>
+</body>
+</html>

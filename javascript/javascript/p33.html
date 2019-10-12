@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Clock example using prototype</title>
+</head>
+<body>
+	<h1 id="clock"></h1>
+
+	<hr>
+	<button onclick="onStart()" >Start</button>
+	<button onclick="onStop()">Stop</button>
+
+	<script src="clock.js"></script>
+	<script>
+		let c1 = new Clock({template:'h:m:s'});
+		
+		function onStart() {
+			c1.start();
+		}
+
+		function onStop() {
+			c1.stop();
+		}
+	</script>
+</body>
+</html>

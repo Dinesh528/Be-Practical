@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://fb.me/react-0.14.7.js"></script>
+    <script src="https://fb.me/react-dom-0.14.7.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <link href="https://bootswatch.com/3/cosmo/bootstrap.min.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <h1>States</h1>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        var NameStateComponent = React.createClass({
+        
+            getInitialState: function() { 
+                return { 
+                    name: 'Pooja',
+                    email: 'pooja@gmail.com'
+                 }
+             },
+
+            render: function() { 
+                console.log(this.state);
+                return (
+                    <div className="container">
+                       <div className="row">
+                            <div className="jumbotron">
+                                 <h3>Hello my Name is  <span className="text-primary">{this.state.name }</span> </h3>
+                                 <h3>My Email id is <span className="text-primary">{ this.state.email }</span> </h3>
+                            </div>
+                        </div>
+                    </div>
+                );
+             }
+        });
+
+
+        ReactDOM.render(
+            <NameStateComponent/>,
+            document.getElementById('root')
+        );
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prototype</title>
+</head>
+<body>
+	<h1>Prototype keyword</h1>
+	<script>
+		function Course(name,fee, duration) {
+			this.name = name;
+			this.fee = fee;
+			this.duration = duration;
+			this.getDisplay = function() {
+
+			};
+		} 
+
+// to create function property external to the object 
+
+		Course.prototype.getDetails = function(){
+				document.write("<p>Course name = " + this.name + "</p>");
+				document.write("<p>Course fee = " + this.fee + "</p>");
+				document.write("<p>Course Duration = " + this.duration + "</p><hr>");
+			}
+
+		let c1 = new Course("AngularJS", "12999", "2 months");
+		let c2 = new Course("ReactJS", "14999", "2.5 months");
+		let c3 = new Course("NodeJS", "11999", "1.5 months");
+
+		c1.getDetails();
+		c2.getDetails();
+		c3.getDetails();
+
+	</script>
+</body>
+</html>

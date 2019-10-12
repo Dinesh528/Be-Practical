@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        section {
+            display: flex;
+            flex-grow: inherit;
+            flex-wrap: nowrap;
+        }
+
+        #address {
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div id="usersapi">
+            
+        </div>
+        <div id="address">
+            
+        </div>
+        <div id="company">
+
+        </div>
+    </section>
+
+    <script>
+        var users = document.querySelector('#usersapi');
+        var address = document.querySelector('#address');
+        var company = document.querySelector("#company");
+
+        var apiUrl = 'https://jsonplaceholder.typicode.com/users';
+
+        var req = new XMLHttpRequest();
+            req.open('GET', apiUrl);
+            req.responseType = 'text';
+            req.send();
+        
+        req.onload = function() {
+            var res = req.response;
+            var jsonRes = JSON.parse(res);
+            console.log(jsonRes);
+
+            popUser(jsonRes);
+            popAddress(jsonRes);
+            popMisc(jsonRes);
+        };
+
+          function popUser(res) {
+             for(i=0; i< res.length; i++) {
+                  var lH3 = document.createElement('h3');
+                 var lp1 = document.createElement('p');
+                 var lp2 = document.createElement('p');
+
+                 lH3.textContent = res[i].id + " " + res[i].name;
+                 lp1.textContent = res[i].username;
+                 lp2.textContent = res[i].email;
+
+                 users.appendChild(lH3);
+                 users.appendChild(lp1);
+                 users.appendChild(lp2);
+             }
+          }
+
+          function popAddress(res) {
+             for(i=0; i< res.length; i++) {
+                   var ah3 = document.createElement('p');
+                 var ap1 = document.createElement('p');
+                 var ap2 = document.createElement('p');
+                 var geo = document.createElement('p');
+                
+                 ah3.textContent = res[i].address.street + ", " + res[i].address.suite + ", " ;
+                 ap1.textContent = res[i].address.city;
+                 ap2.textContent = res[i].address.zipcode; 
+                 geo.textContent = res[i].address.geo.lat + ", " + res[i].address.geo.lng; 
+
+                 address.appendChild(ah3);
+                 address.appendChild(ap1);
+                 address.appendChild(ap2);
+                 address.appendChild(geo);
+             }
+
+          }
+            
+           
+           function popMisc(res) {
+               for(i=0; i< res.length; i++) {
+                     var ph = document.createElement('p');
+                   var web = document.createElement('p');
+                   var com = document.createElement('p');
+
+                //   ph.textContent = 
+               }
+           }
+
+            
+    </script>
+</body>
+</html>

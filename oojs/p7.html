@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Static Keyword</title>
+</head>
+<body>
+	<script>
+		//1. It is used to declare the static method
+		//2. It can be any name
+		//3. A single class can contain more than one static methods
+		//4. If we creates more than one static method with the same name, JS always invokes last static method
+		//5. the static method is used to create utility functions
+		//6. we can call static method only by using className or as the property of the constructor
+
+		class Abc {
+			static display() {
+				alert("Hi i am static method");
+			}
+		}
+
+		Abc.display();
+	</script>
+</body>
+</html>

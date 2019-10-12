@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Functional Components</title>
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <link rel="stylesheet" href="https://bootswatch.com/3/paper/bootstrap.min.css" type="text/css">
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function Menu(){
+            return (
+                <div className="container-fluid">
+                    <nav className="navbar navbar-inverse">
+                        <div className="container">
+                            <div className="navbar-header">
+                                <a className="navbar-brand">Be-Practical</a>
+                                <button className="navbar-toggle" data-target="#myNavbar" data-toggle="collapse">
+                                        <span className="icon-bar"></span>
+                                        <span className="icon-bar"></span>
+                                        <span className="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div className="collapse navbar-collapse" id="myNavbar">
+                                <ul className="nav navbar-nav">
+                                    <li>
+                                        <a href >Home</a>
+                                    </li>
+                                     <li>
+                                        <a>About</a>
+                                    </li>
+                                     <li>
+                                        <a>Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            );
+        }
+
+        function Header() {
+            return (
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-12 col-xs-12">
+                            <h1 className="jumbotron text-center">Hi Pooja, Welcome to ReactJS</h1>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div class="col-md-12">
+                            <div className="col-md-6 col-xs-12">
+                                <p>Nisi irure consectetur excepteur nostrud magna ut nisi dolore laborum adipisicing consequat aliqua. Amet est do dolore id anim tempor consequat incididunt sit sunt sit ea. Do ullamco excepteur voluptate dolore sint do. Deserunt enim commodo nulla in eiusmod. Aliquip laborum voluptate elit laboris irure aliqua. Labore officia eu aliquip culpa qui. Irure Lorem ut ea ex.</p>
+                            </div>
+                            <div className="col-md-6 col-xs-12">
+                                <p>Nisi irure consectetur excepteur nostrud magna ut nisi dolore laborum adipisicing consequat aliqua. Amet est do dolore id anim tempor consequat incididunt sit sunt sit ea. Do ullamco excepteur voluptate dolore sint do. Deserunt enim commodo nulla in eiusmod. Aliquip laborum voluptate elit laboris irure aliqua. Labore officia eu aliquip culpa qui. Irure Lorem ut ea ex.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        function App() {
+            return (
+                <div>
+                    <Menu/>
+                    <Header/>
+                </div>
+            );
+        }
+
+        ReactDOM.render(
+            <App/>,document.getElementById('root')
+        );
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        .title {
+            text-align: center;
+            font-size: 22px;
+            color: crimson;
+        }
+    </style>
+</head>
+<body>
+    <form action="output.php" method="GET" >
+        <fieldset>
+            <legend class="title">T&nbsp;&nbsp;his is legend title</legend>
+        <label for="name">Name</label>
+        <input type="text" name="first" id="" placeholder="Enter name" value="Admin" required  autofocus readonly>
+
+        <hr>
+        <label for="mobil">Mobile</label>
+        <input type="number" name="mobil" id="mobile" placeholder="Enter 10 digit mobile number" required>
+        
+        <br><br>
+        <label for="email">Emailid</label>
+        <input type="email" name="emailid" id="emailid" placeholder="abc@gmil.com" required>
+
+        <br><br>
+        <label for="gender">Gender</label><br>
+        <input type="radio" name="gender" value="male"> Male <br>
+        <input type="radio" name="gender" checked value="female" > Female <br>
+        <input type="radio" name="gender" value="transgender"> Transgender <br>
+
+        <br><br>
+        <label for="lang">Languages</label><br>
+        <input type="checkbox" name="lang1" id="lang1" value="English">English <br>
+        <input type="checkbox" name="lang2" id="lang2" value="Kannada">Kannada 
+
+        <br><br>
+            <input type="date" name="myDate" id="myDate">
+        <br><br>
+            <input type="datetime" name="myDa" id="myDa">
+        <br><br>
+            <input type="datetime-local" name="localdate" id="localdate">
+        <br><br>
+            <input type="time" name="myTime" id="myTime">
+        <br><br>
+            <input type="month" name="myMonth" id="myMonth">
+        <br><br>
+            <input type="week" name="myMonth">
+        <br><br>
+            <input type="file" name="myFile" id="myFile">
+        <br><br>
+            <input type="password" name="pass" id="pass" placeholder="Enter Password">
+        <br><br>
+            <input type="url" name="myUrl" id="" placeholder="http://www.xyz.com" required>
+        <br><br>
+            <input type="search" name="myKey" id="myKey" placeholder="Enter Search key">
+        <br><br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Clear">
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> Multi level Inheritance by Object.create() </title>
+</head>
+<body>
+	<script>
+		let ramesh = {
+			course: 'Angular 2',
+			fee: 12333
+		};
+
+		let suresh = Object.create(ramesh, {
+			hobby: {
+				value: 'Playing Chess'
+			}
+		});
+
+		let raman = Object.create(suresh, {
+			reads: {
+				value: true
+			}
+		});
+
+		document.write( 'Course =' + raman.course + "<br>");
+		document.write( 'Fee =' + raman.fee + "<br>");
+		document.write( 'Hobby =' + raman.hobby + "<br>");
+		document.write( 'Reads =' + raman.reads);
+
+	</script>
+</body>
+</html>

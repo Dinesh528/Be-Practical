@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Inheritance Chain using __proto__</title>
+</head>
+<body>
+	<h1>Inheritance Chain using __proto__</h1>
+	<script>
+		function maruthi(speed){
+			this.speed = speed;
+		}
+
+		maruthi.prototype.display = function() {
+			alert(`Maruthi reaches speed of ${this.speed} in 20sec `);
+		};
+
+		function toyota(speed) {
+			this.speed = speed;
+		}
+
+
+		toyota.prototype.display = function() {
+			alert(`Toyota reaches speed of ${this.speed} in 10sec `);
+		};
+		
+	// inheriting the properties of maruthi into toyota with creating inheritance chain using __proto__
+		
+		toyota.prototype.__proto__ = maruthi.prototype;
+
+		let y1 = new maruthi("100km");
+			y1.display();
+
+	</script>
+</body>
+</html>

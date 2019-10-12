@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>__proto__ multi level inheritance</title>
+</head>
+<body>
+	<script>
+		let animal = {
+			eats: true,
+			drinks: true
+		};
+
+		let rabbit = {
+			jumps: true,
+			__proto__: animal // inherits an animal object properties within rabbit
+		};
+
+		let horse = {
+			runs: true,
+			__proto__: rabbit
+		};
+
+		console.log(horse.eats);
+
+		console.log('animal',Object.keys(animal));
+		console.log('rabbit',Object.keys(rabbit));		
+		console.log('horse',Object.keys(horse));
+
+		for(let x in horse)
+		{
+			let y = horse.valueOf(x);
+			console.log( x,y);
+		}
+	</script>
+</body>
+</html>

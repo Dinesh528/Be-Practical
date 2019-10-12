@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Abstract in javascript</title>
+</head>
+<body>
+	<h1>Abstract in Javascript</h1>
+	<script>
+		
+		function Vehicle() {
+			this.x = "x";
+			// this.display = function(){
+
+			// };
+			throw new Error('You cannot create an abstract class');
+		}
+
+//creating function display externally for Vehicle constructor using prototype
+		Vehicle.prototype.display = function() {
+			return "Vehicle is " + this.x;
+		};
+
+		// creating a constructor function 
+
+		function Bike(x) {
+			this.x = x;
+		}
+
+		// creating object without using function constructor
+
+		Bike.prototype = Object.create(Vehicle.prototype);
+
+		var b = new Bike("Honda");
+		   document.write(b.display());
+	</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <link rel="stylesheet" href="https://bootswatch.com/3/paper/bootstrap.min.css" type="text/css">
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+        const user = {
+            name: "Pooja",
+            email: "pooja@gmail.com",
+            mobile: "0900098098",
+            gender: "female",
+            salary: {
+                basic: 12344,
+                ta: 1232,
+                da: 2333,
+                hra: 3543,
+                ptax: 1234
+            }
+        };
+
+        const Person = ({data}) => {
+
+            const {name,email, mobile,gender,salary} = data;
+
+                return(
+                     <div className="container">
+                    <div className="row">
+                        <div className="col-md-6 col-md-offset-3">
+                            <div className="panel panel-primary">
+                                <div className="panel-heading text-center">
+                                    <h1> { name} </h1>
+                                </div>
+                                <div className="panel-body">
+                                    <h3>Gender <span className="pull-right text-warning"> { gender} </span> </h3>
+                                    <h3>Mobile <span className="pull-right text-warning"> { mobile} </span> </h3>
+                                    <h3>Email <span className="pull-right text-warning"> { email} </span> </h3>
+                                    <Salary sal={salary} />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                );
+        };
+
+        const Salary = ({sal}) => {
+            
+                const { basic, ta, da, hra, ptax } = sal;
+
+                return(
+                     <div>
+                    <ul className="list-group">
+                        <li className="list-group-item">
+                            Basic Pay <span className="pull-right"> &#8377; {basic} </span>
+                        </li>
+                        <li className="list-group-item">
+                            TA <span className="pull-right"> &#8377; {ta} </span>
+                        </li>
+                        <li className="list-group-item">
+                            DA <span className="pull-right"> &#8377; {da} </span>
+                        </li>
+                        <li className="list-group-item">
+                            HRA <span className="pull-right"> &#8377; {hra} </span>
+                        </li>
+                        <li className="list-group-item">
+                            P.Tax <span className="pull-right"> &#8377; {ptax} </span>
+                        </li>
+                    </ul>
+                </div>
+                );
+        };
+
+
+
+
+        function App() {
+            return (
+                <div>
+                    <div className="row">
+                        <h3 className="jumbotron text-center"> React Props </h3>
+                    </div>
+                    <Person data={user} />
+                </div>
+            );
+        }
+
+
+        ReactDOM.render(
+            <App/>,
+            document.getElementById('root')
+        );
+    </script>
+</body>
+
+</html>

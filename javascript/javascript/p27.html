@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Prototype based inheritance </title>
+</head>
+<body>
+	<h1>Multi level Inheritance </h1>
+	<script>
+		let car = {
+			fuel: "petrol",
+			model: "2011"
+		};
+
+		let toyota = Object.create(car, { // 2 inherited props 1 its own prop
+			 gear : {
+			 	value: "auto"
+			 }
+		});
+
+		let mahindra = Object.create(toyota, { // 3 inherited props , 1 of its own prop
+			 engine: {
+			 	value: "6 cyl"
+			 }
+		});
+
+		document.write("<p>Fuel type = " + mahindra.fuel + "</p>");
+		document.write("<p>Model year = " + mahindra.model + "</p>");
+		document.write("<p>Gear type = " + mahindra.gear + "</p>");
+		document.write("<p>Engine type = " + mahindra.engine + "</p>");
+		
+	</script>
+</body>
+</html>

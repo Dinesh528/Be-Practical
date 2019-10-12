@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AJAX Http Requests</title>
+<link href="https://fonts.googleapis.com/css?family=Faster+One|Pacifico" rel="stylesheet">
+	<style>
+		header div h1 {
+			text-align: center;
+			font-size: 4.2em;
+			color:deeppink;
+			font-family: 'Faster One', cursive;
+		}
+
+		header div h3 , h4{
+			text-align: center;
+			font-size: 200%;
+			color: deepskyblue;
+			font-family: 'Pacifico', cursive;
+		}
+
+		section div {
+			width: 30%;
+			display: inline-block;
+			padding: 10px;
+			margin:10px;
+			border:1px solid #ccc;
+			border-radius: 15px;
+		}
+
+		section div h3 {
+			text-align: center;
+			text-transform: uppercase;
+			font-family: 'Faster One', cursive;
+			font-size: 200%;
+			color: deeppink;
+		}
+	</style>
+
+</head>
+<body>
+	<h1>AJAX Call</h1>
+	
+	<header></header>
+	<hr>
+	<section></section>
+
+	<script>
+		var header = document.querySelector("header");
+		var section = document.querySelector("section");
+
+		var requestUrl = "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json";
+
+		// ajax http get request to read response from server api 
+		var request = new XMLHttpRequest();
+			request.open('GET',requestUrl);
+			request.responseType = "text";
+			request.send();
+
+		// read the response on page load
+			request.onload = function() {
+				var sReq = request.response;
+					// console.log(sReq);
+				var jsonRes = JSON.parse(sReq);
+					console.log(jsonRes);
+
+					popHeader(jsonRes);
+					popSection(jsonRes);
+
+			};
+
+			function popHeader(jsonObj){
+
+				var myDiv = document.createElement("div");
+
+				var myH1 = document.createElement("h1");
+					myH1.textContent = jsonObj["squadName"];
+					myDiv.appendChild(myH1);
+
+				var myh3 = document.createElement("h3");
+					myh3.textContent = ` I leave in ${jsonObj["homeTown"]}, and i came to this city in the year ${jsonObj["formed"]}.`;	
+					myDiv.appendChild(myh3);
+
+				var myH4 = document.createElement("h4");
+					myH4.textContent = ` Secret base in this is city is in ${jsonObj["secretBase"]} `;
+					myDiv.appendChild(myH4);
+
+					header.appendChild(myDiv);
+			}
+
+			function popSection(jsonObj){
+				var sRest = jsonObj['members'];
+					console.log(sRest);
+				for(i=0; i < sRest.length; i++) 
+				{
+					var rDiv1 = document.createElement("div");
+
+					var rH3 =  document.createElement("h3");
+						rH3.textContent = sRest[i]['name'];
+						rDiv1.appendChild(rH3);
+
+					var rH4 = document.createElement("h4");
+						rH4.textContent = 'Age is ' + sRest[i]['age'];
+						rDiv1.appendChild(rH4);
+
+					var rH5 = document.createElement("h5");
+						rH5.textContent = 'Secret Identity ' + sRest[i]['secretIdentity'];
+						rDiv1.appendChild(rH5);
+
+					var powers = sRest[i]['powers'];
+
+					var myUl = document.createElement("ul");
+
+					for(j=0; j < powers.length; j++) 
+					{
+						var myLi = document.createElement("li");
+							myLi.textContent = powers[j];
+							myUl.appendChild(myLi);
+					}
+
+						rDiv1.appendChild(myUl);
+
+						section.appendChild(rDiv1);
+				}
+			}
+	</script>
+</body>
+</html>

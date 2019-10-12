@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function showData() {
+			document.getElementById('txt').innerHTML = document.myForm.myInput.value;
+		}
+	</script>
+</head>
+<body>
+	<form name="myForm" >
+			<label for="name">Enter Name</label>
+			<br><br>
+			<input type="text" name="myInput" onkeyup="showData()">
+	</form>
+
+	<h1 id="txt"></h1>
+</body>
+</html>

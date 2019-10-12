@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://bootswatch.com/3/cosmo/bootstrap.min.css">
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root">
+
+    </div>
+
+    <script type="text/babel">
+
+        function Salary(props){
+            return (
+                <div>
+                    <ul className="list-group">
+                        <li className="list-group-item">Basic Pay: <span className="pull-right text-success"> {props.salary.basic} </span></li>
+                        <li className="list-group-item">HRA: <span className="pull-right text-success"> {props.salary.hra} </span> </li>
+                        <li className="list-group-item">DA: <span className="pull-right text-success"> {props.salary.da} </span> </li>
+                        <li className="list-group-item">TA:  <span className="pull-right text-success"> {props.salary.ta} </span> </li>
+                    </ul>
+                </div>
+            );
+        }
+
+        function Person(props) {
+            return (
+                    <div>
+                            <div className="col-md-4">
+                               <div className="panel panel-primary">
+                                    <div className="panel-heading">
+                                        <h1 className="text-center"> {props.name} </h1>
+                                    </div>
+                                    <div className="panel-body">
+                                        <ul className="list-group"> 
+                                            <li className="list-group-item">Email Id: <span className="pull-right text-success"> {props.email} </span></li>
+                                            <li className="list-group-item">Mobile: <span className="pull-right text-danger"> {props.mobile} </span></li>
+                                            <li className="list-group-item">Gender: <span className="pull-right text-danger"> {props.gender} </span></li>
+                                            <li className="list-group-item">Salary: 
+                                                <Salary salary={props.salary}/>
+                                            </li>
+                                        </ul>
+                                    </div>
+                               </div>
+                            </div>
+                        </div>
+            );
+        }
+
+        const person = [
+            {
+            name: "Rajesh",
+            email: "rajesh@gmail.com",
+            mobile: "9988774455",
+            gender: "male",
+            salary: {
+                basic : 22000,
+                hra: 4200,
+                da: 1200,
+                ta: 850
+            }
+        },
+        {
+            name: "Mahesh",
+            email: "mahesh@gmail.com",
+            mobile: "9988774455",
+            gender: "male",
+            salary: {
+                basic : 22000,
+                hra: 4200,
+                da: 1200,
+                ta: 850
+            }
+        },
+         {
+            name: "Vinod",
+            email: "vinod@gmail.com",
+            mobile: "9988774455",
+            gender: "male",
+            salary: {
+                basic : 22000,
+                hra: 4200,
+                da: 1200,
+                ta: 850
+            }
+        }
+        ];
+
+        function App(props) {
+            return (
+                <div className="container">
+                   <div className="row">
+                         {person.map(item => {
+                            return (
+                                <div>
+                                    <Person
+                                        name ={item.name}
+                                        email={item.email}
+                                        mobile={item.mobile}
+                                        gender={item.gender}
+                                        salary={item.salary}/>
+                                </div>
+                            )
+                    })}
+                   </div>
+                </div>
+            );
+        }
+
+        ReactDOM.render(
+           <App
+                                name ={person.name}
+                                email={person.email}
+                                mobile={person.mobile}
+                                gender={person.gender}
+                                salary={person.salary}
+           /> ,
+            document.getElementById('root')
+        );
+
+    </script>
+
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

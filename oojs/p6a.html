@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // User is object format (class Constructor) Factory Function
+        function User() {
+            this.first = "Mohan kumar";
+            //local to user
+            function getTime() {
+                return new Date().toLocaleTimeString();
+            }
+            // property of user
+            this.getMyTime = function() {
+                 alert(getTime());
+                alert(this.first);
+            }
+
+            this.sayHi = () => {
+                // alert(getTime());
+                document.write(this.first);
+            }
+        }
+
+        let d = new User();
+             d.getMyTime();
+            d.sayHi();
+        //    document.write(d.getTime());
+         
+    </script>
+</body>
+</html>

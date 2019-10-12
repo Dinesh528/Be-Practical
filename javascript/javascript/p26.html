@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Objects</title>
+</head>
+<body>
+	<script>
+		// 1. object.create() => create same copy of parent object in another
+		// 2. getPrototypeOf() => return the properties of one object 
+		// 3. setPrototypeOf()=>  create or overwrite an existing properties
+
+		let car = {
+			model: "2012",
+			color: "white"
+		};
+
+		let maruthi = Object.create(car);
+			console.log(Object.getPrototypeOf(maruthi) === car); // true
+
+	document.write( "maruthi model is " +maruthi.model + " color is " + maruthi.color + "<br>");
+
+			Object.setPrototypeOf(maruthi, { fuel:"petrol" });	// overwritten the maruthi with empty object
+
+	document.write( "maruthi model is " +maruthi.model + " color is " + maruthi.color + ", Fuel type " + maruthi.fuel);
+
+			console.log(Object.getPrototypeOf(maruthi) === car); // false
+	</script>
+</body>
+</html>

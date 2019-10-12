@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Encapsulation in Javascript (value as constructor parameter)</h1>
+	<script>
+		class Bepractical {
+			constructor(course){
+				this.course = course;
+			}
+
+			getCourse(){
+				return this.course;
+			}
+		}
+
+		var b1 = new Bepractical('React JS');
+			console.log(b1.getCourse());
+	</script>
+</body>
+</html>

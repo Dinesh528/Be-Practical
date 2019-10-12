@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        section {
+            width: 300px;
+            height: auto;
+            border: 1px solid orangered;
+            padding: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="myData">
+
+    </section>
+    <script>
+        const user = [
+            {
+                name: 'Ramesh Kumar',
+                email: 'ramesh@gmail.com',
+                mobile: '9988776655'
+            },
+            {
+                 name: 'Dinesh',
+                email: 'dinesh@gmail.com',
+                mobile: '8877445566'
+            },
+            {
+                 name: 'Pooja',
+                email: 'pooja@gmail.com',
+                mobile: '77445588'
+            }
+        ];
+
+        var sec = document.querySelector("#myData");
+
+            for(i=0; i< user.length ; i++) {
+                 var tH2 = document.createElement('h2');
+                var tH3 = document.createElement('h3');
+                var tH4 = document.createElement('h4');
+
+                tH2.textContent = "username = " + user[i].name;
+                tH3.textContent = "email = " + user[i].email;
+                tH4.textContent = "mobile =" + user[i].mobile ;
+
+                sec.appendChild(tH2);
+                sec.appendChild(tH3);
+                sec.appendChild(tH4);
+            }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <h1>javascript  object (parent and child key objects) </h1>
+    <script>
+        var person = {
+                        name: {
+                                 first: ["Ganesh", "Rajesh"],
+                                 last : "Kumar"
+                              },
+                        email: "harish@gmail.com",
+                        mobile: "9988776655",
+                        display: function(){
+                                             alert("This is an object function");   
+                                            }
+                     };
+        
+        document.write("First name = " + person.name.first[0] + "  " + person.name.first[1] + "<br>");
+        document.write("Last name = " + person.name.last + "<br>");
+        document.write("Email Id = " + person.email + "<br>");
+        document.write("Mobile No = " + person.mobile + "<br>");
+        
+        person.display();
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		class Xyz {
+			static course(){
+				alert("I am learning an OOJS concept");
+			}
+
+			static course(){
+				alert("i am learning an Angular JS");
+			}
+			constructor(a,b){
+				this.a = a;
+				this.b = b;
+			}
+
+			result(){
+				return this.a * this.b;
+			}
+		}
+//   static methods can be accessed with ref to class name
+		Xyz.course();
+
+		let x1 = new Xyz(12,23);
+			x1.result();
+	</script>
+</body>
+</html>

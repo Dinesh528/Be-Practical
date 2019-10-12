@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>object for loop</h1>
+	<script>
+		let car = {
+			name: 'maruthi', // key : value = property => group of properties is object
+			model: '800',
+			color: 'metallic red',
+			year : '2018'
+		};
+
+		let vehicle = {
+			reg: 'karnataka',
+			fc: '2034',
+			__proto__: car
+		};
+
+		for(let x in vehicle) {
+			let y = vehicle.hasOwnProperty(x);
+			console.log( `${x} : ${y} `);
+		}
+
+		console.log(Object.keys(vehicle));
+		console.log(Object.keys(car));
+	</script>
+</body>
+</html>

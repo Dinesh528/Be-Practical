@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <link rel="stylesheet" href="https://bootswatch.com/3/cosmo/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  </head>
+  <body>
+      <div id="myApp"></div>
+      <script type="text/babel">
+      
+        class Header extends React.Component {
+          render() {
+            return(
+                 <div className="container">
+                      <div className="row">
+                          <h3 className="jumbotron text-center"> Child Component </h3>
+                      </div>
+                      <div className="row">
+                          <div className="col-md-6">
+                              <h3 className="well">Sample Text Content</h3>
+                              <p> Ut vulputate quam sed volutpat sagittis. Donec a sem vitae arcu hendrerit sodales ut id est. Curabitur feugiat lacinia nunc, nec congue tellus tincidunt eget. Ut sit amet bibendum massa. Phasellus felis urna, eleifend ac tellus ut, pellentesque tincidunt diam. Integer in tortor ligula. Quisque imperdiet velit ac neque congue iaculis. Vivamus laoreet lorem a dignissim porttitor. Nam maximus erat eu justo ullamcorper congue. Sed mi sem, faucibus molestie augue efficitur, efficitur pretium nunc. Duis mattis ultricies pharetra. Suspendisse tristique tristique nisi, sed tristique mauris. Fusce vestibulum, ipsum in sollicitudin egestas, ligula sapien aliquet elit, ut ultrices magna quam in metus. Nulla luctus lectus vel neque aliquet, vel consectetur quam fermentum. Vivamus cursus augue ante, at congue ipsum accumsan sit amet. </p>
+                          </div>
+                      </div>
+                 </div>
+            );
+          }
+        }
+
+          class App extends React.Component {
+              render() {
+                return (
+                      <div className="contianer-fluid">
+                          <div className="row">
+                             <h3 className="jumbotron text-center">Parent App Component</h3>
+                          </div>
+                          <Header/>
+                      </div>
+                );
+              }
+          }
+
+          ReactDOM.render(
+              <App/>,
+              document.getElementById('myApp')
+          );
+      </script>
+  </body>
+</html>
