@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter</title>
+    <style>
+        div{
+            counter-reset: dinesh;
+        }
+        /* pseudo Properties = before and after */
+
+        div h1::before{
+            counter-increment: dinesh;
+            content: 'Topic' counter(dinesh) '.';
+        }
+
+        .cir{
+            height: 200px;
+            width: 200px;
+            background: red;
+            border-top-right-radius: 50%;
+            border-bottom-left-radius: 50%;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Counter</h1>
+    <div>
+        <h1>JavaScript Tutorial</h1>
+        <h1>HTML Tutorial</h1>
+        <h1>CSS Tutorial</h1>
+        <h1>JQUERY Tutorial</h1>
+        <h1>React Tutorial</h1>
+        <h1>Angular Tutorial</h1>
+    </div>
+    <div class="cir"></div>
+</body>
+</html>

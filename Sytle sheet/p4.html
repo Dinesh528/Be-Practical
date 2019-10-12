@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Css</title>
+    <style>
+        p{
+            border-width: 6px;
+            border-color:deeppink;
+            padding: 10px;
+            margin: 20px;
+        }
+
+        .solid{border-style: solid;}
+        .dotted{border-style: dotted;}
+        .dashed{border-style: dashed;}
+        .inset{border-style: inset;}
+        .outset{border-style:outset;}
+        .groove{border-style:groove;}
+        .ridge{border-style:ridge;}
+        .hidden{border-style:hidden;}
+        .double{border-style:double;}
+
+        .custom{
+            border-top-style: dashed;
+            border-bottom-style: groove;
+            border-left-style:dotted;
+            border-right-style:  double;
+        }
+
+        .custom2{
+            width: 100px;
+            height: 100px;
+            border: 3px solid deeppink;
+            border-radius: 50px;
+        }
+
+        .custom3{
+            width: 100px;
+            height:100px;
+            border: 3px solid deeppink;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi sapiente sed dolorum in iure aperiam enim ducimus hic neque! Deserunt ratione enim dicta nobis hic. Eveniet corporis assumenda dignissimos praesentium.</p>
+    <p class="solid">This is solid border</p>
+    <p class="dotted">Dotted border</p>
+    <p class="dashed">Dashed Border</p>
+    <p class="inset">Inset Border</p>
+    <p class="outset">OutSet Border</p>
+    <p class="groove">Groove border</p>
+    <p class="ridge">Ridge border</p>
+    <p class="hidden">Hidden Value</p>
+    <p class="double">Double border</p>
+    <p class="custom1">this is custom1 border</p>
+
+    <div class="custom2">
+        circle border
+    </div>
+
+    <div class="custom3">
+        circle border
+    </div>
+</body>
+</html>
