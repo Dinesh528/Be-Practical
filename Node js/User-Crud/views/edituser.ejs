@@ -31,7 +31,56 @@
         <div class="row">
             <h3 class="jumbotron text-center">Edit User</h3>
         </div>
-        
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 well">
+                <% for(i=0; i < userData.length; i ++){ %>
+                    <form
+                        action="/updatenow/<%= userData[i].name %>"
+                        method="POST"
+                        autocomplete="off">
+
+                        <div class="form-group">
+                            <label for="">Name</label>
+                            <input 
+                            type="text"
+                            name="name"
+                            value="<%=userData[i].name %>"
+                            class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Email ID</label>
+                            <input 
+                            type="email"
+                            name="emailid"
+                            value="<%=userData[i].emailid %>"
+                            class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Mobile</label>
+                            <input 
+                            type="number"
+                            name="mobile"
+                            value="<%=userData[i].mobile %>"
+                            class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Gender</label>
+                            <input 
+                            type="text"
+                            name="gender"
+                            value="<%=userData[i].gender %>"
+                            class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Update" class="btn btn-primary"/>
+                        </div>
+
+                    </form>
+
+                <%} %>
+            </div>
+        </div>
     </div>
      
     <!--jQuery library-->

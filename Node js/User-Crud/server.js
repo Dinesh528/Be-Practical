@@ -32,3 +32,47 @@ mongoClient.connect(db_url,function(err,response){
     console.log("Successfully connected to Mongodb");
     database = response.db(db_name)
 });
+
+//for '// default path rendering index.ejs
+app.get('/',(req,res)=>{
+    database.collection('userinfo').find().toArray(function(err,data){
+        if(err) console.log(err);
+        console.log(data);
+        res.render('index.ejs',{users:data});
+    });
+});
+
+app.get('/newuser',(req,res)=>{
+    res.render('newuser.ejs');
+});
+
+//to post new user data to server
+app.post('/createuser',(req,res)=>{
+    database.collection('userinfo').save(req.body,function(err,response){
+        if(err) console.log(err);
+        console.log('New User successfully created..');
+        res.redirect('/');
+    });
+});
+
+app.get('/update/:name',(req,res)=>{
+    database.collection('userinfo').find({'name': req.params.name}).toArray(function(err,data){
+        if(err) console.log(err);
+        console.log("Successfully Updated the user info..");
+        res.render('edituser.ejs',{userData:data});
+    });
+});
+
+//edit user info data in server
+app.get('/updatenow/:name',(req,res)=>{
+    database.collection('userinfo').updateOne({'name':req.params.name},{$set: req.body},(req,data)=>{
+        if(err) console.log(err);
+        console.log("Successfully Updated the user info..");
+        res.redirect('/');
+    });
+});
+
+// starting server
+app.listen(1245,()=>{
+    console.log("Server is running in http://localhost:1245");
+});
