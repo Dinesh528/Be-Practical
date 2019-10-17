@@ -64,14 +64,23 @@ app.get('/update/:name',(req,res)=>{
 });
 
 //edit user info data in server
-app.get('/updatenow/:name',(req,res)=>{
-    database.collection('userinfo').updateOne({'name':req.params.name},{$set: req.body},(req,data)=>{
+app.post('/updatenow/:name',(req,res)=>{
+    console.log(req.body);
+    database.collection('userinfo').updateOne({'name':req.params.name},{$set: req.body},(err,data)=>{
         if(err) console.log(err);
         console.log("Successfully Updated the user info..");
         res.redirect('/');
     });
 });
 
+//to delete user info
+app.get('/delete/:name',(req,res)=>{
+    database.collection('userinfo').deleteOne({ 'name': req.params.name}, { $set: req.body }, (err,data)=>{
+        if(err) console.log(err);
+        console.log("Successfully Deleted the user info..");
+        res.redirect('/');
+    });
+});
 // starting server
 app.listen(1245,()=>{
     console.log("Server is running in http://localhost:1245");

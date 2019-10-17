@@ -1,18 +1,14 @@
 import React from 'react';
 import './App.css';
-import Title from './components/Title';
-import Skills from './components/Skills';
-import Portfolio from './components/Portfolio';
-import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="App">
-      <h1 className="jumbotron">Welcome to react router</h1>
-      <Title/>
-      <Skills/>
-      <Portfolio/>
-      <Footer/>
+        <div className="row">
+             <div className="col-md-12 jumbotron text-center">
+                  <h1>Welcome to React</h1>
+             </div>
+        </div>
     </div>
   );
 }
