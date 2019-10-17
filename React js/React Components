@@ -1,0 +1,41 @@
+Three types of components
+1.Functional
+2.class components
+3. constant element
+
+#Functional components
+
+import React from 'react';
+
+function App(){
+    return(
+        <div>
+        </div>
+    );
+}
+
+export default App;
+
+
+#class components
+
+import React,{Component} from 'react';
+
+class App extends Component{
+    render(){
+        return(
+            <div>
+            <div>
+        );
+    }
+}
+
+export default App;
+
+#constant element
+
+const App=()=> React.createClass({
+
+});
+
+export default App;
