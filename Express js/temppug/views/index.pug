@@ -1,0 +1,35 @@
+doctype html
+html
+    head
+        title="Hello pug"
+        link(rel="stylesheet",href="https://bootswatch.com/3/cosmo/bootstrap.min.css",type="text/css")
+    body
+        nav.navbar.navbar-default
+            .container
+                .navbar-header
+                    a(class="navbar-brand",href="/",data-target="#menu",data-toggle="collapse") Pug Template
+                .navbar-collapse.collapse
+                    ul(class="navbar-nav nav",id="menu")
+                        li
+                            a(href="/about_us") About Pug
+
+            .container
+                .row    
+                    .col-md-12
+                        .jumbotron
+                            h1.text-center="Pug Example"
+                .row
+                    .col-md-12
+                        table.table.table-striped 
+                            tr
+                                th Name
+                                th Email
+                                th Mobile
+                            for x in users
+                                tr
+                                    td
+                                        span=x['name']
+                                    td
+                                        span=x['email']
+                                    td
+                                        span=x['mobile']                                            
