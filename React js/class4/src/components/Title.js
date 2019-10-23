@@ -6,7 +6,7 @@ class Title extends Component{
             <div className="row">
                 <div className="col-md-12">
                     <div className="col-md-4 col-sm-12 col-xs-12">
-                        <img src={this.props.imgUrl} alt='' width="200" height="200" className="imgLogo img-circle"/> 
+                        <img src={this.props.imgUrl} alt='' width="200" height="200" className="imgLogo img-circle img-responsive"/> 
                     </div>
                     <div className="col-md-8 col-sm-12 col-xs-12">
                         <h1 className="text-center">Hello..!</h1>

@@ -9,19 +9,24 @@ import createBrowserHistory from 'history/createBrowserHistory';
 
 import Header from './components/Header';
 import Resume from './components/Resume';
-import Portfolio from './components/Portfolio';
+import Portfolio1 from './components/Portfolio1';
 import Album from './Projects/Album';
 import Jokes from './Projects/Jokes';
 import Post from './Projects/Post';
+import Users from './components/Users';
+import Pnf from './components/Pnf';
 
 ReactDOM.render(
     <Router history={createBrowserHistory()}>
         <Switch>
             <Route exact path='/' render={()=> <Header><App/></Header>} />
             <Route exact path='/resume' render={ ()=> <Header><Resume/></Header>} />
-             <Route exact path='/jokes' render= { ()=> <Header><Jokes/></Header>} />
+            <Route exact path='/jokes' render= { ()=> <Header><Jokes/></Header>} />
             <Route exact path='/album' render={ ()=> <Header><Album/></Header>} />
-            <Route exact path='/post' render= { ()=> <Header><Post/></Header>} /> */}
+            <Route exact path='/portfolio1' render= {()=><Header><Portfolio1/></Header>} />
+            <Route exact path='/users' render={ ()=><Header><Users/></Header>}/>
+            <Route exact path='/post' render= { ()=> <Header><Post/></Header>} />
+            <Route exact path='*' render={ ()=>(<Header><Pnf/></Header>)}/>
         </Switch>
     </Router>
 

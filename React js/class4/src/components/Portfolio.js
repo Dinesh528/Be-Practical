@@ -7,7 +7,7 @@ const Projects= props => {
     return(
         <div className="col-md-4">
             <h3 className="text-center">{title}</h3>
-            <img src={image} className="img-thumbnail img-responsive"/>
+            <img src={image}  alt="" className="img-thumbnail img-responsive"/>
             <p className="text-justify">{description}</p>
             <a className="btn btn-primary" href={url}>{url}</a>
         </div>
