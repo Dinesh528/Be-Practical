@@ -31,7 +31,7 @@ export default class App extends Component {
         <Switch>
           <Route exact path='/' component={news}></Route>
           <Route  exact path='/new' component={New}></Route>
-          <Route exact path='/edit' component={Edit}></Route>
+          <Route exact path='/edit/:id' component={Edit}></Route>
           <Route exact path='/news' component={news}></Route>
           <Route exact path='*' component={pnf}></Route>
         </Switch>

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
+import {Link} from 'react-router-dom';
+import SingleNews from './SingleNews';
 
 const URL = "https://dinesh-newsapi.herokuapp.com/";
 
@@ -26,6 +28,7 @@ const News = ({news:{_id,title,content,image,reporter,reptime}})=>(
             </div>
             <div className="panel-footer">
                 <h5>{reporter}</h5>
+                <Link to={`/edit/${_id}`} className="btn btn-info">Edit</Link>
             </div>
         </div>
     </div>
@@ -63,7 +66,7 @@ class news extends Component {
 
                 <div className="row">
                     {this.state.news.map(news=>(
-                        <News key={news._id} news={news}></News>
+                        <SingleNews key={news._id} news={news}/>
                     ))}
                 </div>
                 
